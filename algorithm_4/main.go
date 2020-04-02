@@ -12,7 +12,8 @@ func main() {
 			step = 1
 		}
 	}
-	fmt.Println(lamp)
+
+	fmt.Println(checkLamp(&lamp))
 }
 
 func stepAction(step int, l *[100]bool) {
@@ -37,4 +38,15 @@ func stepAction(step int, l *[100]bool) {
 			}
 		}
 	}
+}
+
+func checkLamp(l *[100]bool) int {
+	var tmp = 0
+	for _, v := range l {
+		if v == true {
+			tmp++
+		}
+	}
+
+	return tmp
 }
